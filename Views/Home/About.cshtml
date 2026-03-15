@@ -1,0 +1,53 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "About";
+}
+
+<div class="container">
+    <div class="row justify-content-center d-md-grid ">
+        <div class="col-sm-12 shadow-lg">
+            <table class="table table-bordered">
+                <thead class="table table-dark">
+                    <tr>
+                        <th>PatientID:</th>
+                        <th>PatientName:</th>
+                        <th>PatientAge</th>
+                        <th>AdmissionDate</th>
+                        <th>Investigation</th>
+                        <th>DischargeDate</th>
+                        <th>RoomRent</th>
+                        <th>Noofdays</th>
+                        <th>TotalAmount</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody style="background-color:gray; color:navajowhite">
+                    @{
+                        int sr = 1;
+                        foreach (System.Data.DataRow row in Model.Rows)
+                        {
+                                        <tr>
+                                            <td>@sr</td>
+                                            <td>@row["PatientName"]</td>
+                                            <td>@row["PatientAge"]</td>
+                                            <td>@row["AdmissionDate"]</td>
+                                            <td>@row["Investigation"]</td>
+                                            <td>@row["DischargeDate"]</td>
+                                            <td>@row["RoomRent"]</td>
+                                            <td>@row["Noofdays"]</td>
+                                            <td>@row["TotalAmount"]</td>
+                                            <td>
+                                                <a class="btn btn-success" href="/Home/Contact?PatientID=@row["PatientID"]">Edit</a>
+                                                <a class="btn btn-danger" href="/Home/DeletePatientById?PatientID=@row["PatientID"]">Delete</a>
+                                            </td>
+                                        </tr>
+                                sr++;
+                            }
+                        }
+                </tbody>
+
+            </table>
+            <h3 style="color:green"></h3> 
+        </div>
+    </div>
+</div>

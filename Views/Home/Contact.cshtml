@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <form method="post">
+        <div class="row justify-content-center">
+            <div class="col-sm-6 d-grid bg-secondary text-bg-dark shadow-lg  rounded justify-content-center">
+                <input type="hidden" name="PatientID" value="@Model["PatientID"]"/>
+                <div>
+                    <label for="PNameAttr">Patient Name</label>
+                    <input type="text" name="PNameAttr" class="form-control" value="@Model["PatientName"]" />
+                </div>
+                <div>
+                    <label for="PAgeAttr">Patient Age</label>
+                    <input type="number" name="PAgeAttr" class="fomr-control" value="@Model["PatientAge"]" />
+                </div>
+                <div>
+                    <label for="PAdmsnAttr">Admission Date</label>
+                    <input type="date" name="PAdmsnAttr" class="form-control" value="@Model["AdmissionDate"]" />
+                </div>
+                <div>
+                    <label for="PInvestAttr">Investigation</label>
+                    <input type="text" name="PInvestAttr" class="form-control" value="@Model["Investigation"]" />
+                </div>
+
+                <div>
+                    <label for="PDiscDate">Discharge Date</label>
+                    <input type="date" name="PDiscDate" class="form-control" value="@Model["DischargeDate"]" />
+                </div>
+                <div>
+                    <label for="PRoReAttr">Room Rent</label>
+                    <input type="number" name="PRoReAttr" class="form-control" value="@Model["RoomRent"]" />
+                </div>
+                <div>
+                    <label for="PnoAttr">No. of days</label>
+                    <input type="number" name="PnoAttr" class="form-control" value="@Model["Noofdays"]" />
+                </div>
+                <div>
+                    <label for="PtotalAttr">Total Amount</label>
+                    <input type="number" name="PtotalAttr" class="form-control" value="@Model["TotalAmount"]" readonly/>
+                </div>
+                <div><button class="btn btn-outline-info">Submit</button></div>
+            </div>
+        </div>
+    </form>
+</div>
